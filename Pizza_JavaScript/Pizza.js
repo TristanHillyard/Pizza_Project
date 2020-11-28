@@ -30,7 +30,6 @@ function getReceipt() {
     console.log("subtotal: $"+runningTotal+".00");
     //these variables will get passed on to each function
     getTopping(runningTotal, text1);
-    getVeggies(runningTotal, text1);
 };
 
 function getTopping(runningTotal,text1) {
@@ -59,28 +58,27 @@ function getTopping(runningTotal,text1) {
     document.getElementById("totalPrice").innerHTML="<h3>Total: <strong>$"+ runningTotal+".00"+"</strong></h3>";
 };
 
-function getVeggies(runningTotal,text1) {
-    var veggiesTotal = 0;
-    var selectedVeggies = [];
-    var veggiesArray = document.getElementsByClassName("veggies");
-    for (var v = 0; v < veggiesArray.length; v++) {
-        if (veggiesArray[v].checked) {
-            selectedVeggies.push(veggiesArray[v].value);
-            console.log("selected veggie item: ("+veggiesArray[v].value+")");
-            text1 = text1+veggiesArray[v].value+"<br>";
-        }
-    }
-    var veggieCount = selectedVeggies.length;
-    if(veggieCount > 1) {
-        veggiesTotal = (veggieCount - 1);
-    }else {
-        veggiesTotal = 0;
-    }
-    runningTotal = (runningTotal + veggiesTotal);
-    console.log("total selcted veggie items: "+veggieCount);
-    console.log(veggieCount+"veggie - 1 free veggie = "+"$"+veggiesTotal+".00");
-    console.log("veggie text1: "+text1);
-    console.log("Purchase Total: "+"$"+runningTotal+".00");
-    document.getElementById("showText").innerHTML=text1
-    document.getElementById("totalPrice").innerHTML="<h3>Total: <strong>$"+ runningTotal+".00"+"</strong></h3>";
-}
+// function getVeggies(runningTotal,text1) {
+//     var veggiesTotal = 0;
+//     var selectedVeggies = [];
+//     var veggiesArray = document.getElementsByClassName("veggies");
+//     for (var v = 0; v < veggiesArray.length; v++) {
+//         if (veggiesArray[v].checked) {
+//             selectedVeggies.push(veggiesArray[v].value);
+//             console.log("selected veggie item: ("+veggiesArray[v].value+")");
+//             text1 = text1+veggiesArray[v].value+"<br>";
+//         }
+//     }
+//     var veggieCount = selectedVeggies.length;
+//     if(veggieCount > 1) {
+//         veggiesTotal = (veggieCount - 1);
+//     }else {
+//         veggiesTotal = 0;
+//     }
+//     runningTotal = (runningTotal + veggiesTotal);
+    //console.log("total selcted veggie items: "+veggieCount);
+    //console.log(veggieCount+"veggie - 1 free veggie = "+"$"+veggiesTotal+".00");
+    //console.log("veggie text1: "+text1);
+    //console.log("Purchase Total: "+"$"+runningTotal+".00");
+    //document.getElementById("showText").innerHTML=text1
+    //document.getElementById("totalPrice").innerHTML="<h3>Total: <strong>$"+ runningTotal+".00"+"</strong></h3>";
